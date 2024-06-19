@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Popup Chatbot</title>
+        <style>
+    /* Chat popup styles */
+    .chat-popup {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        z-index: 1000;
+        width: 300px;
+    }
+
+    .chat-popup.open {
+        display: block;
+    }
+
+    .chat-popup-header {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        background-color: #eee;
+    }
+
+    .chat-popup-body {
+        padding: 10px;
+        max-height: 200px; /* Adjust as needed */
+        overflow-y: auto;
+    }
+
+    .chat-popup-footer {
+        padding: 10px;
+        border-top: 1px solid #ccc;
+    }
+
+    /* Chat input styles */
+    .chat-input {
+        width: calc(100% - 20px);
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .chat-submit {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+    /* Button styles */
+    .open-chat-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+    </head>
+    <body>
+
+        <!-- Trigger button for the chat popup -->
+        <button id="open-chat" class="open-chat-button">Open Chat</button>
+
+        <!-- Chat popup -->
+        <div id="popup-chat" class="chat-popup">
+            <div class="chat-popup-header">Chatbot</div>
+            <div id="chat-popup-body" class="chat-popup-body"></div>
+            <div class="chat-popup-footer">
+                <input type="text" id="user-input" class="chat-input"
+                    placeholder="Type your message...">
+                <button id="send-button" class="chat-submit">Send</button>
+            </div>
+        </div>
+
+        <script>
+    const chatPopup = document.getElementById('popup-chat');
+    const chatBody = document.getElementById('chat-popup-body');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
+    const openChatButton = document.getElementById('open-chat');
+
+    function appendMessage(message, sender) {
+        const msgElement = document.createElement('div');
+        msgElement.textContent = `${sender}: ${message}`;
+        chatBody.appendChild(msgElement);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function handleUserInput() {
+        const userMessage = userInput.value.trim();
+        if (userMessage !== '') {
+            appendMessage(userMessage, 'You');
+            userInput.value = '';
+            respondToUser(userMessage.toLowerCase());
+        }
+    }
+
+    function respondToUser(message) {
+        let response = '';
+        if (message.includes('hello') || message.includes('hi')) {
+            response = "Hello there! How can I help you?";
+        } else if (message.includes('how are you')) {
+            response = "I'm just a bot, but thanks for asking!";
+        } else {
+            response = "I'm not sure how to respond to that.";
+        }
+        setTimeout(() => {
+            appendMessage(response, 'Bot');
+        }, 500);
+    }
+
+    function toggleChat() {
+        chatPopup.classList.toggle('open');
+    }
+
+    openChatButton.addEventListener('click', toggleChat);
+    sendButton.addEventListener('click', handleUserInput);
+
+    userInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            handleUserInput();
+        }
+    });
+</script>
+
+    </body>
+</html>

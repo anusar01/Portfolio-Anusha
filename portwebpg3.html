@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Anusha Sarkar Portfolio</title>
+        <link rel="stylesheet" href="styles.css"> <!-- External CSS file -->
+        <script src="script2.js" defer></script>
+        <!-- External JavaScript file -->
+    </head>
+    <body>
+        <header>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AS - <i>Anusha
+                    Sarkar</i></h1>
+            <nav>
+                <a href="#section1">About</a>
+                <a href="#section2">Creative Works</a>
+                <a href="#section3">Contact</a>
+            </nav>
+        </header>
+        <main>
+            <section id="section1">
+                <article>
+                    <h2>About</h2>
+                    <img src="AnushaDP.jpeg" alt="My picture" height="300">
+                    <p>
+                        👨‍🎓 Hello, I'm Anusha Sarkar, a second-year
+                        engineering student with a passion for innovation and
+                        problem-solving. Currently pursuing my B.Tech degree in
+                        Computer Science and Engineering, I am dedicated to
+                        acquiring a strong foundation in both theoretical
+                        knowledge and practical skills.
+                    </p>
+                    <ul>
+                        <li>🛠️ In the classroom, I am immersed in a variety of
+                            subjects, ranging from Computer Programming to
+                            Discrete Mathematics. These experiences have not
+                            only deepened my understanding of engineering
+                            principles but have also fueled my curiosity to
+                            explore the intersections between technology and
+                            real-world challenges.</li>
+                        <li>💡 Outside of academics, I actively engage in Fine
+                            Arts and learning new evolving skills in technology,
+                            where I apply my skills to hands-on projects and
+                            collaborate with fellow students. Whether it's
+                            coding, designing, or tinkering with electronics, I
+                            find joy in bringing ideas to life.</li>
+                        <li>🌐 Looking ahead, I am excited about the
+                            possibilities that the engineering field offers. My
+                            goal is to contribute to cutting-edge technologies
+                            that have a positive impact on society. As I
+                            continue my academic journey, I am eager to embrace
+                            new challenges, expand my skill set, and ultimately
+                            make a meaningful mark in the world of
+                            engineering.</li>
+                    </ul>
+                    <h3>Education</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Institute</th>
+                                <th>Degree/Board</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>VBPS Noida </td>
+                                <td>CBSE 10th (High School)</td>
+                                <td>2019-20</td>
+                            </tr>
+                            <tr>
+                                <td>VBPS Noida </td>
+                                <td>CBSE 12th (Higher Secondary Ed)</td>
+                                <td>2021-22</td>
+                            </tr>
+                            <tr>
+                                <td>VIT Vellore </td>
+                                <td>B.Tech CSE Core </td>
+                                <td>2022-26</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+            <section id="section2">
+                <article>
+                    <h2>Creative Works</h2>
+                    <h3>My Artworks</h3>
+                    <div class="gallery-wrap">
+                        <img src="backbtn.jpg" id="backBtn">
+                        <div class="gallery">
+                            <div>
+                                <span><img src="draw1.jpeg"
+                                        alt="Drawing 1"></span>
+                                <span><img src="draw2.jpeg"
+                                        alt="Drawing 2"></span>
+                                <span><img src="draw3.jpeg"
+                                        alt="Drawing 3"></span>
+                            </div>
+                            <div>
+                                <span><img src="pic1.jpeg" alt="Pic 1"></span>
+                                <span><img src="pic2.jpeg" alt="Pic 2"></span>
+                                <span><img src="pic3.jpeg" alt="Pic 3"></span>
+                            </div>
+                        </div>
+                        <img src="frontbtn.jpeg" id="frontBtn">
+                    </div>
+                </article>
+                <article>
+                    <h3>Learning Ukulele</h3>
+                    <video controls>
+                        <source src="vid1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </article>
+            </section>
+            <section id="section3">
+                <article>
+                    <h2>Contact Me</h2>
+                    <form id="contact-form">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name"
+                            required><br><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email"
+                            required><br><br>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4"
+                            required></textarea><br><br>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <div id="message-box"></div>
+                </article>
+            </section>
+        </main>
+        <!-- Chat popup -->
+        <div id="popup-chat" class="chat-popup">
+            <div class="chat-popup-header">
+                Chatbot
+                <button class="minimize-button"
+                    onclick="toggleChat()">-</button>
+            </div>
+            <div class="chat-popup-body" id="chat-popup-body"></div>
+            <div class="chat-popup-footer">
+                <input type="text" id="user-input" class="chat-input"
+                    placeholder="Type your message...">
+                <button id="send-button" class="chat-submit">Send</button>
+            </div>
+        </div>
+        <!-- Button to open the chat popup -->
+        <button id="open-chat" class="open-chat-button">Open Chat</button>
+        <script src="script.js" defer></script>
+        <footer>
+            <p>Connect with me:
+                <a href="https://www.facebook.com" target="_blank"><img
+                        src="fblogo.png" height="30" alt="fb"></a>
+                <a href="https://www.youtube.com" target="_blank"><img
+                        src="utubelogo.png" height="40" alt="youtube"></a>
+            </p>
+        </footer>
+    </body>
+</html>

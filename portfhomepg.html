@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        body {
+            background: url('bg2.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            animation: slideIn 1s ease-out;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        h3 {
+            animation: bounceIn 1s ease-out;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 18px;
+            background-color: lightblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(0, 132, 139);
+        }
+    </style>
+        <title>Anusha Home</title>
+    </head>
+    <body>
+
+        <h1>HI There!</h1>
+        <h3>Welcome to my page!</h3>
+
+        <a href="portwebpg3.html" target="_blank">
+            <button>Portfolio website</button>
+        </a>
+        <br>
+        <a
+            href="https://drive.google.com/file/d/1xy9-79UIy2JTbeCkr7YHT5RIlLLxoDvl/view?usp=sharing"
+            target="_blank">
+            <button>Resume</button>
+        </a>
+
+    </body>
+</html>
